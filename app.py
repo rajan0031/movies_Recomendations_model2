@@ -1,4 +1,5 @@
 import streamlit as st
+import joblib
 import pickle
 import requests
 import pandas as pd
@@ -59,7 +60,7 @@ def recommend(movie):
 
 # ✅ Load movie data + similarity matrix
 movies_list = pickle.load(open("movies.pkl", "rb"))
-similarity = pickle.load(open("similarity.pkl", "rb"))
+similarity = joblib.load("similarity.pkl")
 
 st.title("🎬 Movie Recommender System")
 
